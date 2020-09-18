@@ -1,0 +1,58 @@
+<html>
+<head>
+
+</head>
+<body>
+<h3>Not as exciting as you'd hoped, ay? </h3>
+<h3>I mean... it is just a calculator</h3>
+<h3>And it does... calculate, right? </h3>
+<form Name="calc">
+<table border=2>
+<tr>
+<td colspan=4><input type=text Name="display" id="display"></td>
+</tr>
+<tr>
+<td><input type=button value="0" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="1" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="2" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="+" OnClick="addOperator(this.value);"></td>
+</tr>
+<tr>
+<td><input type=button value="3" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="4" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="5" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="-" OnClick="addOperator(this.value);"></td>
+</tr>
+<tr>
+<td><input type=button value="6" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="7" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="8" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="*" OnClick="addOperator(this.value);"></td>
+</tr>
+<tr>
+<td><input type=button value="9" OnClick="addvalue(this.value);"></td>
+<td><input type=button value="C" OnClick="calc.display.value=''"></td>
+<td><input type=button value="=" OnClick="calculate();"></td>
+<td><input type=button value="/" OnClick="addOperator(this.value);"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+<script>
+function addvalue(actualvalue)
+{
+document.getElementById("display").value+= actualvalue;
+}
+
+function addOperator(op)
+{
+document.getElementById("display").value+= op;
+}
+ 
+function calculate() {   
+  return document.getElementById("display").value=eval(document.getElementById("display").value);
+   
+}
+</script>
